@@ -4,9 +4,9 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class UsuarioService {
+export class ProductoService {
 
-  url='http://localhost/taller/src/app/php/usuario/';
+  url='http://localhost/taller/src/app/php/productos/';
 
   constructor(private http:HttpClient) { }
 
@@ -24,5 +24,5 @@ export class UsuarioService {
 
   edit(datos:any) {
     return this.http.post(`${this.url}editar.php`, JSON.stringify(datos));
-  }
+}
 }

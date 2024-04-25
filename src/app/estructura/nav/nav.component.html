@@ -2,42 +2,42 @@
   <div class="position-sticky pt-3 sidebar-sticky">
     <ul class="nav flex-column">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">
+        <a class="nav-link active" aria-current="page" [routerLink]="['/inicio']">
           <i class="bi bi-house-door"></i>
           <span data-feather="home" class="align-text-bottom"></span>
           Inicio
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" [routerLink]="['/usuario']">
           <i class="bi bi-person-circle"></i>
           <span data-feather="file" class="align-text-bottom"></span>
           Usuario
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" [routerLink]="['/reparaciones']">
           <i class="bi bi-car-front"></i>
           <span data-feather="shopping-cart" class="align-text-bottom"></span>
           Reparaciones
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" [routerLink]="['/inventario']">
           <i class="bi bi-backpack"></i>
           <span data-feather="users" class="align-text-bottom"></span>
           Inventario
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" [routerLink]="['/clientes']">
           <i class="bi bi-people-fill"></i>
           <span data-feather="bar-chart-2" class="align-text-bottom"></span>
           Clientes
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" [routerLink]="['/administracion']">
           <i class="bi bi-pc-display-horizontal"></i>
           <span data-feather="layers" class="align-text-bottom"></span>
           Administracion
