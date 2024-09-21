@@ -1,0 +1,79 @@
+<br><h1>INVENTARIO</h1>
+
+<button class="btn btn-primary" (click)="mostrar(1)">Insertar producto</button><br><br>
+
+<div id="formulario" *ngIf="verf==true">
+    <div class="row" style="border-block-color: red;">
+        <div class="col-lg-6">
+            <input type="text" id="nombre" class="form-control" [(ngModel)]="product.nombre" placeholder="Nombre del producto"><br>
+            <span style="color: red;" *ngIf="validnombre==false">Ingrese nombre del producto</span>
+        </div>
+        <div class="col-lg-6">
+            <input type="number" id="cantidad" class="form-control" [(ngModel)]="product.cantidad" placeholder="Cantidad del producto"><br>
+            <span style="color: red;" *ngIf="validcantidad==false">Ingrese la cantidad</span>
+        </div>
+        <div class="col-lg-6">
+            <input type="number" id="precios" class="form-control" [(ngModel)]="product.precios" placeholder="Precio del producto"><br>
+            <span style="color: red;" *ngIf="validprecios==false">Ingrese el precio</span>
+        </div>
+        <div class="col-lg-6">
+            <input type="number" id="stock" class="form-control" [(ngModel)]="product.stock" placeholder="Ingrese stock"><br>
+            <span style="color: red;" *ngIf="validstock==false">Ingrese el stock</span>
+        </div>
+    </div>
+     <div class="row">
+        <!-- <div class="col-lg-6">
+            <input type="password" id="clave" class="form-control" [(ngModel)]="user.clave"><br>
+            <span style="color: red;" *ngIf="validclave==false">Insertar Contraseña</span>
+        </div> -->
+        <div class="col-lg-6">
+            <select id="fo_marca" class="form-control form-select" [(ngModel)]="product.fo_marca">
+                <option value="0" label="Seleccionar marca">Seleccionar marca</option>
+                <option *ngFor="let itemc of marca" value="{{itemc.id_marca}}" label="{{itemc.nombre}}">{{itemc.nombre}}</option>
+            </select><br>
+            <span style="color: red;" *ngIf="validfomarca==false">Seleccionar marca</span>
+        </div>
+    </div> 
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-3">
+            <button *ngIf="beditar==false" class="btn btn-primary"  (click)="ingresar()">Guardar</button>
+            <button *ngIf="beditar==true" class="btn btn-primary" (click)="editar()">Editar</button> 
+        </div>
+        <div class="col-lg-3">
+            <button class="btn btn-secondary" (click)="mostrar(0)">Cancelar</button>
+        </div>
+        <div class="col-lg-3"></div>
+    </div> 
+</div>
+
+<br>
+<div class="table-responsive">
+    <table class="table table-success table-striped" border="1">
+        <tr>
+            <th>Nombre</th>
+            <th>Stock</th>
+            <th>Cantidad</th>
+            <th>Precios</th>
+            <th>Marca</th>
+            <th style="text-align: center;">Acciones</th>
+        </tr>
+        <!-- mostrar los usuarios -->
+        <tr *ngFor="let item of producto">
+           <td>{{item.nombre}}</td>
+           <td style="text-align: left;">{{item.stock}}</td> 
+           <td style="text-align: left;">{{item.cantidad}}</td>
+           <td>$ {{item.precios}}</td>
+           <td>{{item.nmarca}}</td> 
+           <td align="center">
+                <a (click)="cargardatos(item, item.id_productos)">
+                    <span class="bi bi-pen-fill editar" title="Editar"></span>
+                </a>
+               
+                <a (click)="pregunta(item.id_productos, item.nombre)">
+                    <span class="bi bi-trash3-fill eliminar" title="Eliminar" ></span>
+                </a>
+           </td> 
+        </tr>
+    </table>
+  </div>

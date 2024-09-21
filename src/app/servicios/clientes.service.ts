@@ -14,15 +14,19 @@ export class ClientesService {
     return this.http.get(`${this.url}consulta.php`);
   }
 
-  insertar(articulo:any) {
-    return this.http.post(`${this.url}insertar.php`, JSON.stringify(articulo));
+  insertar(datos:any) {
+    return this.http.post(`${this.url}insertar.php`, JSON.stringify(datos));
+  }
+
+  consultar_ciudad() {
+    return this.http.get(`${this.url}consulta_ciudad.php`);
   }
 
   eliminar(id:number) {
     return this.http.get(`${this.url}eliminar.php?id=${id}`);
   }
 
-  edit(datos:any) {
-    return this.http.post(`${this.url}editar.php`, JSON.stringify(datos));
-  }
+  edit(datos:any, id:number) {
+     return this.http.post(`${this.url}editar.php?id=${id}`, JSON.stringify(datos));
+   }
 }

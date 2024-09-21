@@ -14,15 +14,27 @@ export class ReparacionesService {
     return this.http.get(`${this.url}consulta.php`);
   }
 
-  insertar(articulo:any) {
-    return this.http.post(`${this.url}insertar.php`, JSON.stringify(articulo));
+  consultar_cliente() {
+    return this.http.get(`${this.url}consulta_cliente.php`);
+  }
+
+  consultar_reparacion() {
+     return this.http.get(`${this.url}consulta_reparacion.php`);
+  }
+
+  consultar_usuario() {
+    return this.http.get(`${this.url}consulta_usuario.php`);
+ }
+
+  insertar(datos:any) {
+    return this.http.post(`${this.url}insertar.php`, JSON.stringify(datos));
   }
 
   eliminar(id:number) {
     return this.http.get(`${this.url}eliminar.php?id=${id}`);
   }
 
-  edit(datos:any) {
-    return this.http.post(`${this.url}editar.php`, JSON.stringify(datos));
-  }
+  edit(datos:any, id:number) {
+    return this.http.post(`${this.url}editar.php?id=${id}`, JSON.stringify(datos));
+}
 }

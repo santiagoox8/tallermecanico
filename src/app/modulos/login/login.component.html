@@ -1,1 +1,16 @@
-<p>login works!</p>
+<header></header>
+<div id="container">
+    <img src="../../../assets/img/logo.png" alt="logo">
+    <h2>Taller Mecanico</h2>
+        <div id="form">
+          <input type="email" class=form-control placeholder="Email" [(ngModel)]="email">
+
+          <input type="password" class="form-control" placeholder="Contraseña" [(ngModel)]="clave">
+
+          <span *ngIf="error==true" style="color: red;">Email o contraseña incorrecta</span><br>
+
+          <input type="button" value="Ingresar" class="btn btn-primary" (click)="consulta()">
+
+        </div>
+      
+  </div>

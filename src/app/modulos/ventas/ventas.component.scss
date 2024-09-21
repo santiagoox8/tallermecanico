@@ -1,0 +1,53 @@
+input, select{
+    margin-top: 10px;
+    border-width: 1px;
+    border-style: solid;
+    
+}
+button{
+    background-color:orange;
+    border-color: gray;
+    color: gray;
+}
+
+.btn:hover{
+    background-color: gray;
+    border-color: gray;
+    color: white;
+}
+
+.editar{
+    color: blue;
+    cursor: pointer;
+}
+
+.eliminar{
+    color: red;
+    cursor: pointer;
+}
+
+.table>:not(caption)>*>* {
+    background: none;
+}
+
+div, button{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+h1{
+    font-family: 'Times New Roman', Times, serif;
+}
+th{
+    background-color: orange;
+    color: gray;  
+    border: 1px solid gray;
+    padding-left: 6px;
+}
+
+td{
+    border: 1px solid gray;
+    padding-left: 6px;
+}
+tr:nth-child(even){
+    background-color: #ddd;
+}

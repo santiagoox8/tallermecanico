@@ -1,0 +1,100 @@
+div, button{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+h1{
+    font-family: 'Times New Roman', Times, serif;
+}
+th{
+    background-color: orange;
+    color: gray;  
+}
+
+
+ div.roww{
+    justify-content: center;
+    display: flex;
+ }
+
+
+ .col-md-5{
+    padding-right: 10px;
+ }
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+a.row:hover{
+    color: orange;
+}
+
+i.bi.bi-person-badge-fill{
+    font-size: 50px
+
+}
+
+i.bi.bi-wrench-adjustable{
+    font-size: 50px
+
+}
+i.bi.bi-box-seam-fill{
+    font-size: 50px
+}
+i.bi.bi-person-raised-hand{
+    font-size: 50px
+}
+i.bi.bi-cash{
+    font-size: 50px
+}
+
+
+h6.text-muted.font-semibold{
+    justify-content: center;
+    display: flex;
+    align-items: center !important;
+    padding-top: 15px;
+    font-size: 25px;
+    
+}
+h6{
+    justify-content: center;
+    display: flex
+}
+
+
+
+h6.text-muted.font-semibold:hover{
+    color: orange !important;
+}
+
+div.container-fluid.py-5{
+    padding-top: 10px !important;
+}
+.p-5{
+    padding-top: 10px !important;
+    padding-bottom: 20px !important;
+}
+
+.h2 {
+    font-size: 40px;
+    padding-right: 1444px !important;
+}
+a.navbar.material-symbols-outlined{
+    font-size: 70px;
+    color: white;
+    padding-left: 0px;
+    text-decoration: none;
+}
+.btn {
+    color: gray;
+    background-color: orange;
+    border-color: orange;
+}
+.btn:hover {
+    background-color: gray !important;
+    border-color: gray;
+    color: white;
+}
+  

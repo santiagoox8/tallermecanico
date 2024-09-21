@@ -1,0 +1,75 @@
+<br><h1>CLIENTES</h1>
+
+<button class="btn btn-primary" (click)="mostrar(1)">Insertar cliente</button><br><br>
+
+<div id="formulario" *ngIf="verf==true">
+    <div class="row">
+        <div class="col-lg-6">
+            <input type="text" id="nombre" class="form-control" [(ngModel)]="client.nombre" placeholder="Ingrese nombre"><br>
+            <span style="color: red;" *ngIf="validnombre==false">Insertar Nombre</span>
+        </div>
+        <div class="col-lg-6">
+            <input type="text" id="direccion" class="form-control" [(ngModel)]="client.direccion" placeholder="Ingrese su direccion"><br>
+            <span style="color: red;" *ngIf="validdireccion==false">Insertar Direccion</span>
+        </div>
+        <div class="col-lg-6">
+            <input type="text" id="celular" class="form-control" [(ngModel)]="client.celular" placeholder="Ingrese su celular"><br>
+            <span style="color: red;" *ngIf="validcelular==false">Ingrese Su Celular</span>
+        </div>
+        <div class="col-lg-6">
+            <input type="email" id="email" class="form-control" [(ngModel)]="client.email" placeholder="Ingrese email"><br>
+            <span style="color: red;" *ngIf="validemail==false">Insertar Email</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <select id="fo_ciudad" class="form-control form-select" [(ngModel)]="client.fo_ciudad">
+                <option value="0" label="Seleccionar ciudad">Seleccionar ciudad</option>
+                <option *ngFor="let itemcc of ciudad" value="{{itemcc.id_ciudad}}" label="{{itemcc.nombre}}">{{itemcc.nombre}}</option>
+            </select><br>
+            <span style="color: red;" *ngIf="validfociudad==false">Seleccione su ciudad</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-3">
+            <button *ngIf="beditar==false" class="btn btn-primary" (click)="ingresar()">Guardar</button>
+            <button *ngIf="beditar==true" class="btn btn-primary" (click)="editar()">Editar</button>
+        </div>
+        <div class="col-lg-3">
+            <button class="btn btn-secondary" (click)="mostrar(0)">Cancelar</button>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>
+
+<br>
+<div class="table-responsive">
+    <table class="table table-success table-striped" border="1">
+        <tr>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>Celular</th>
+            <th>Email</th>
+            <th>Ciudad</th>
+            <th style="text-align: center;">Acciones</th>
+        </tr>
+        <!-- mostrar los usuarios -->
+        <tr *ngFor="let item of cliente">
+           <td>{{item.nombre}}</td>
+           <td>{{item.direccion}}</td> 
+           <td>{{item.celular}}</td> 
+           <td>{{item.email}}</td> 
+           <td>{{item.nciudad}}</td> 
+           <td align="center">
+                <a (click)="cargardatos(item, item.id_clientes)">
+                    <span class="bi bi-pen-fill editar" title="Editar"></span>
+                </a>
+               
+                <a (click)="pregunta(item.id_clientes, item.nombre)">
+                    <span class="bi bi-trash3-fill eliminar" title="Eliminar" ></span>
+                </a>
+           </td> 
+        </tr>
+    </table>
+  </div>

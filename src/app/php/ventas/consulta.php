@@ -4,7 +4,12 @@
 
   require("../conexion.php");
 
-  $con = "SELECT * from ventas ORDER BY nombre";
+  $con = "SELECT v.*, c.nombre AS ncliente, p.nombre AS nproducto FROM ventas v
+         INNER JOIN clientes c ON v.fo_cliente = c.id_clientes
+         INNER JOIN productos p ON v.fo_producto = p.id_productos
+         ORDER BY c.nombre, p.nombre";
+
+
   $res=mysqli_query($conexion,$con) or die('no consulto venta');
 
 

@@ -5,10 +5,11 @@
   $json = file_get_contents('php://input');
 
   $params = json_decode($json);
+  $id = $_GET['id'];
 
   require("../conexion.php");
 
-  $editar = "UPDATE clientes SET nombre='$params->nombre', direccion='$params->direccion', celular='$params->celular', email='$params->email' WHERE id_cliente=$params->id_cliente";
+  $editar = "UPDATE clientes SET nombre='$params->nombre', direccion='$params->direccion', celular='$params->celular', email='$params->email', fo_ciudad='$params->fo_ciudad' WHERE id_clientes=$id";
   mysqli_query($conexion, $editar) or die('No edito');
   
 

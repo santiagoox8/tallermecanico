@@ -1,28 +1,29 @@
-<h1>USUARIO</h1>
+<br><h1>USUARIO</h1>
 
-<button class="btn btn-primary" (click)="mostrar(1)">Insertar usario</button><br><br>
+<button class="btn btn-primary" (click)="mostrar(1)">Insertar usuario</button><br><br>
 
 <div id="formulario" *ngIf="verf==true">
     <div class="row">
         <div class="col-lg-6">
-            <input type="text" id="nombre" class="form-control" [(ngModel)]="user.nombre"><br>
+            <input type="text" id="nombre" class="form-control" [(ngModel)]="user.nombre" placeholder="Ingrese nombre"><br>
             <span style="color: red;" *ngIf="validnombre==false">Insertar Nombre</span>
         </div>
         <div class="col-lg-6">
-            <input type="email" id="email" class="form-control" [(ngModel)]="user.email"><br>
-            <span style="color: red;" *ngIf="validemail==false">Insertar Usuario</span>
+            <input type="email" id="email" class="form-control" [(ngModel)]="user.email" placeholder="Ingrese email"><br>
+            <span style="color: red;" *ngIf="validemail==false">Insertar Email</span>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-6">
-            <input type="password" id="clave" class="form-control" [(ngModel)]="user.clave"><br>
+            <input type="password" id="clave" class="form-control" [(ngModel)]="user.clave" placeholder="Contraseña"><br>
             <span style="color: red;" *ngIf="validclave==false">Insertar Contraseña</span>
         </div>
         <div class="col-lg-6">
             <select id="tipo" class="form-control form-select" [(ngModel)]="user.tipo">
-                <option value="Administrador" label="Administrador">Administrador</option>
+                <input type="text" id="Tipo">
+                <option value="Administrador"label="Administrador">Administrador</option>
                 <option value="General" label="General">General</option>
-            </select><br>
+            </select>
             <span style="color: red;" *ngIf="validtipo==false">Elegir el tipo de usuario</span>
         </div>
     </div>
@@ -46,14 +47,14 @@
             <th>Nombre</th>
             <th>Email</th>
             <th>Tipo</th>
-            <th>Accioness</th>
+            <th style="text-align: center;">Acciones</th>
         </tr>
         <!-- mostrar los usuarios -->
         <tr *ngFor="let item of usuario">
            <td>{{item.nombre}}</td>
            <td>{{item.email}}</td> 
            <td>{{item.tipo}}</td> 
-           <td>
+           <td align="center">
                 <a (click)="cargardatos(item, item.id_usuario)">
                     <span class="bi bi-pen-fill editar" title="Editar"></span>
                 </a>

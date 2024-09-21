@@ -12,6 +12,10 @@ import { PrincipalComponent } from './modulos/principal.component';
 import { DashboardComponent } from './modulos/dashboard/dashboard.component';
 import { LoginComponent } from './modulos/login/login.component';
 import { UsuarioComponent } from './modulos/usuario/usuario.component';
+import { ProductosComponent } from './modulos/productos/productos.component';
+import { ClientesComponent } from './modulos/clientes/clientes.component';
+import { VentasComponent } from './modulos/ventas/ventas.component';
+import { ReparacionesComponent } from './modulos/reparaciones/reparaciones.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { UsuarioComponent } from './modulos/usuario/usuario.component';
     PrincipalComponent,
     DashboardComponent,
     LoginComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    ProductosComponent,
+    ClientesComponent,
+    VentasComponent,
+    ReparacionesComponent
   ],
   imports: [
     BrowserModule,

@@ -9,8 +9,7 @@
   require("../conexion.php");
 
 
-  //$ins = "insert into usuario(nombre, email, clave, tipo) values('Prueba', 'Prueba@gmail.com', sha1('123456789'), '3022086203')";
-  $ins = "insert into productos(nombre, stock, cantidad, precios) values('$params->nombre', '$params->stock', '$params->cantidad, '$params->precios')";
+  $ins = "INSERT into productos(nombre, fo_marca, stock, cantidad, precios) values ('$params->nombre', '$params->fo_marca', '$params->stock', '$params->cantidad', '$params->precios')";
 
   mysqli_query($conexion, $ins) or die('No inserto');
   

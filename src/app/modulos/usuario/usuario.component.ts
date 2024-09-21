@@ -84,7 +84,7 @@ export class UsuarioComponent implements OnInit {
   consulta() {
     this.suser.consultar().subscribe((result:any) => {
       this.usuario = result;
-      //console.log(this.usuario);
+      console.log(this.usuario);
     })
   }
 

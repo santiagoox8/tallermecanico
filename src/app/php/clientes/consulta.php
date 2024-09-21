@@ -4,7 +4,10 @@
 
   require("../conexion.php");
 
-  $con = "SELECT * from clientes ORDER BY nombre";
+  $con = "SELECT c.*, o.nombre AS nciudad FROM clientes c
+          INNER JOIN ciudad o ON c.fo_ciudad = o.id_ciudad
+          ORDER BY c.nombre";
+          
   $res=mysqli_query($conexion,$con) or die('no consulto cliente');
 
 

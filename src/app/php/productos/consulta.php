@@ -4,7 +4,11 @@
 
   require("../conexion.php");
 
-  $con = "SELECT * from productos ORDER BY nombre";
+  $con = "SELECT p.*, m.nombre AS nmarca FROM productos p 
+          INNER JOIN marca m ON p.fo_marca = m.id_marca
+          ORDER BY p.nombre";
+
+
   $res=mysqli_query($conexion,$con) or die('no consulto producto');
 
 

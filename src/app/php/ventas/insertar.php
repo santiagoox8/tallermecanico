@@ -10,7 +10,7 @@
 
 
   //$ins = "insert into usuario(nombre, email, clave, tipo) values('Prueba', 'Prueba@gmail.com', sha1('123456789'), '3022086203')";
-  $ins = "insert into ventas(cantidad, precios) values('$params->cantidad', '$params->precios')";
+  $ins = "INSERT INTO ventas(fo_cliente, fo_producto, cantidad, precios, subtotales, iva, total) values('$params->fo_cliente', '$params->fo_producto', '$params->cantidad', '$params->precios', '$params->subtotales', '$params->iva', '$params->total')";
 
   mysqli_query($conexion, $ins) or die('No inserto');
   

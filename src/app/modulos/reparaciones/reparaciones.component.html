@@ -1,0 +1,99 @@
+<br><h1>REPARACIONES</h1>
+
+<button class="btn btn-primary" (click)="mostrar(1)">Insertar reparacion</button><br><br>
+
+<div id="formulario" *ngIf="verf==true">
+    <div class="row">
+        <div class="col-lg-6">
+            <select id="fo_cliente" class="form-control form-select" [(ngModel)]="repar.fo_cliente">
+                <option value="0" label="Seleccionar cliente">Seleccionar cliente</option>
+                <option *ngFor="let itemcccc of cliente" value="{{itemcccc.id_clientes}}" label="{{itemcccc.nombre}}">{{itemcccc.nombre}}</option>
+                </select><br>
+                <span style="color: red;" *ngIf="validfocliente==false">Seleccionar cliente</span>
+        </div>
+        <div class="col-lg-6">
+            <select id="fo_repuestos" class="form-control form-select" [(ngModel)]="repar.fo_repuestos">
+            <option value="0" label="Seleccionar repuesto">Seleccionar repuesto</option>
+            <option *ngFor="let itemcccc of repuestos" value="{{itemcccc.id_repuesto}}" label="{{itemcccc.nombre}}">{{itemcccc.nombre}}</option>
+            </select><br>
+            <span style="color: red;" *ngIf="validforepuestos==false">Seleccionar repuesto</span>
+        </div>
+        <div class="col-lg-6">
+            <input type="text" id="cantidad" class="form-control" [(ngModel)]="repar.cantidad" placeholder="Ingrese Cantidad"><br>
+            <span style="color: red;" *ngIf="validcantidad==false">Insertar Cantidad</span>
+        </div>
+        <div class="col-lg-6">
+            <input type="text" id="precios" class="form-control" [(ngModel)]="repar.precios" placeholder="Ingrese precio"><br>
+            <span style="color: red;" *ngIf="validprecios==false">Insertar Precio</span>
+        </div>
+        <div class="col-lg-6">
+            <input type="text" id="subtotales" class="form-control" [(ngModel)]="repar.subtotales" placeholder="Ingrese subtotal"><br>
+            <span style="color: red;" *ngIf="validsubtotales==false">Insertar Subtotal</span>
+        </div>
+        <div class="col-lg-6">
+            <input type="text" id="iva" class="form-control" [(ngModel)]="repar.iva" placeholder="Ingrese iva"><br>
+            <span style="color: red;" *ngIf="validiva==false">Insertar Iva</span>
+        </div>
+        <div class="col-lg-6">
+            <input type="text" id="total" class="form-control" [(ngModel)]="repar.total" placeholder="Ingrese el total"><br>
+            <span style="color: red;" *ngIf="validtotal==false">Insertar Total</span>
+        </div>
+        <div class="col-lg-6">
+            <select id="fo_usuario" class="form-control form-select" [(ngModel)]="repar.fo_usuario">
+            <option value="0" label="Seleccionar usuario">Seleccionar usuario</option>
+            <option *ngFor="let itemcccc of usuario" value="{{itemcccc.id_usuario}}" label="{{itemcccc.nombre}}">{{itemcccc.nombre}}</option>
+            </select><br>
+            <span style="color: red;" *ngIf="validfousuario==false">Seleccionar usuario</span>
+        </div>
+</div>
+        
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-3">
+            <button *ngIf="beditar==false" class="btn btn-primary" (click)="ingresar()">Guardar</button>
+            <button *ngIf="beditar==true" class="btn btn-primary" (click)="editar()">Editar</button>
+            </div>
+            <div class="col-lg-3">
+                <button class="btn btn-secondary" (click)="mostrar(0)">Cancelar</button>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+
+</div>
+
+<br>
+<div class="table-responsive">
+    <table class="table table-success table-striped" border="1">
+        <tr>
+            <th>Cliente</th>
+            <th>Repuesto</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Subtotal</th>
+            <th>Iva</th>
+            <th>Total</th>
+            <th>Vendedor</th>
+            <th style="text-align: center;">Acciones</th>
+        </tr>
+        <!-- mostrar los usuarios -->
+        <tr *ngFor="let item of reparacion">
+           <td>{{item.ncliente}}</td>
+           <td>{{item.nrepuesto}}</td> 
+           <td>{{item.cantidad}}</td>
+           <td>{{item.precios}}</td>
+           <td>{{item.subtotales}}</td> 
+           <td>{{item.iva}}</td>
+           <td>{{item.total}}</td>
+           <td>{{item.nusuario}}</td>
+           <td align="center">
+                <a (click)="cargardatos(item, item.id_reparaciones)">
+                    <span class="bi bi-pen-fill editar" title="Editar"></span>
+                </a>
+               
+                <a (click)="pregunta(item.id_reparaciones, item.fo_cliente)">
+                    <span class="bi bi-trash3-fill eliminar" title="Eliminar" ></span>
+                </a>
+           </td> 
+        </tr>
+    </table>
+  </div>
