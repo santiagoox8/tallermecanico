@@ -137,7 +137,15 @@ export class VentasComponent implements OnInit {
     //console.log(this.cat);
     this.validar();
 
-    if(this.validfocliente=true && this.validfoproducto==true && this.validcantidad==true && this.validprecios==true && this.validsubtotales==true && this.validiva==true && this.validtotal==true){
+    let te = Number(this.vent.fo_cliente);
+    this.vent.fo_cliente = te;
+    console.log(this.vent);
+
+    let pr = Number(this.vent.fo_producto);
+    this.vent.fo_producto = pr;
+    console.log(this.vent);
+
+    if(this.validfocliente==true && this.validfoproducto==true && this.validcantidad==true && this.validprecios==true && this.validsubtotales==true && this.validiva==true && this.validtotal==true){
       this.sventa.insertar(this.vent).subscribe((datos:any) => {
         if (datos['resultado']=='OK') {
           //alert(datos['mensaje']);
@@ -198,7 +206,7 @@ export class VentasComponent implements OnInit {
     //console.log(this.cat);
     this.validar();
 
-    if(this.validfocliente=true && this.validfoproducto==true && this.validcantidad==true && this.validprecios==true && this.validsubtotales==true && this.validiva==true && this.validtotal==true){
+    if(this.validfocliente==true && this.validfoproducto==true && this.validcantidad==true && this.validprecios==true && this.validsubtotales==true && this.validiva==true && this.validtotal==true){
       this.sventa.edit(this.vent, this.idventa).subscribe((datos:any) => {
         if (datos['resultado']=='OK') {
           //alert(datos['mensaje']);

@@ -113,7 +113,7 @@ export class ProductosComponent implements OnInit {
     this.product.fo_marca = ma;
     console.log(this.product);
 
-    if(this.validnombre=true && this.validfomarca==true && this.validcantidad==true && this.validprecios==true && this.validstock==true){
+    if(this.validnombre==true && this.validfomarca==true && this.validcantidad==true && this.validprecios==true && this.validstock==true){
       this.sproducto.insertar(this.product).subscribe((datos:any) => {
         if (datos['resultado']=='OK') {
           //alert(datos['mensaje']);
@@ -172,7 +172,7 @@ export class ProductosComponent implements OnInit {
     //console.log(this.cat);
     this.validar();
 
-    if(this.validnombre=true && this.validfomarca==true && this.validcantidad==true && this.validprecios==true && this.validstock==true){
+    if(this.validnombre==true && this.validfomarca==true && this.validcantidad==true && this.validprecios==true && this.validstock==true){
       this.sproducto.edit(this.product, this.idprod).subscribe((datos:any) => {
         if (datos['resultado']=='OK') {
           //alert(datos['mensaje']);

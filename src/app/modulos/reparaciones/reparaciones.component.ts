@@ -155,7 +155,15 @@ export class ReparacionesComponent implements OnInit {
     //console.log(this.cat);
     this.validar();
 
-    if(this.validfocliente=true && this.validforepuestos==true && this.validcantidad==true && this.validprecios==true && this.validsubtotales==true && this.validiva==true && this.validtotal==true && this.validfousuario==true){
+    let cl = Number(this.repar.fo_cliente);
+    this.repar.fo_cliente = cl;
+    console.log(this.repar);
+
+    let us = Number(this.repar.fo_usuario);
+    this.repar.fo_usuario = us;
+    console.log(this.repar);
+
+    if(this.validfocliente==true && this.validforepuestos==true && this.validcantidad==true && this.validprecios==true && this.validsubtotales==true && this.validiva==true && this.validtotal==true && this.validfousuario==true){
       this.sreparacion.insertar(this.repar).subscribe((datos:any) => {
         if (datos['resultado']=='OK') {
           //alert(datos['mensaje']);
@@ -217,7 +225,7 @@ export class ReparacionesComponent implements OnInit {
     //console.log(this.cat);
     this.validar();
 
-    if(this.validfocliente=true && this.validforepuestos==true && this.validcantidad==true && this.validprecios==true && this.validsubtotales==true && this.validiva==true && this.validtotal==true && this.validfousuario==true){
+    if(this.validfocliente==true && this.validforepuestos==true && this.validcantidad==true && this.validprecios==true && this.validsubtotales==true && this.validiva==true && this.validtotal==true && this.validfousuario==true){
       this.sreparacion.edit(this.repar, this.idreparacion).subscribe((datos:any) => {
         if (datos['resultado']=='OK') {
           //alert(datos['mensaje']);

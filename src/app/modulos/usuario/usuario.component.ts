@@ -92,7 +92,7 @@ export class UsuarioComponent implements OnInit {
     //console.log(this.cat);
     this.validar();
 
-    if(this.validnombre=true && this.validemail==true && this.validclave==true && this.validtipo==true){
+    if(this.validnombre==true && this.validemail==true && this.validclave==true && this.validtipo==true){
       this.suser.insertar(this.user).subscribe((datos:any) => {
         if (datos['resultado']=='OK') {
           //alert(datos['mensaje']);
@@ -150,7 +150,7 @@ export class UsuarioComponent implements OnInit {
     //console.log(this.cat);
     this.validar();
 
-    if(this.validnombre=true && this.validemail==true && this.validclave==true && this.validtipo==true){
+    if(this.validnombre==true && this.validemail==true && this.validclave==true && this.validtipo==true){
       this.suser.edit(this.user, this.iduser).subscribe((datos:any) => {
         if (datos['resultado']=='OK') {
           //alert(datos['mensaje']);

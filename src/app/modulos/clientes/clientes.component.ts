@@ -172,7 +172,7 @@ export class ClientesComponent implements OnInit {
     //console.log(this.cat);
     this.validar();
 
-    if(this.validnombre=true && this.validdireccion==true && this.validcelular==true && this.validemail==true && this.validfociudad==true){
+    if(this.validnombre==true && this.validdireccion==true && this.validcelular==true && this.validemail==true && this.validfociudad==true){
       this.scliente.edit(this.client, this.idclien).subscribe((datos:any) => {
         if (datos['resultado']=='OK') {
           //alert(datos['mensaje']);

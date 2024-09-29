@@ -1,29 +1,28 @@
 .px-3{
     color: white !important;
     font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;  
+    font-family: 'Times New Roman', Times, serif;
 }
 div.navbar-nav :hover{
     color: gray !important;
 }
   
-.navbar-brand {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-right: 1650px !important;
-    
-    background-color: rgba(252, 127, 10, 0.932);
-    box-shadow: inset -1px 0 0 rgba(252, 127, 10, 0.932);
-    font-size: 40px !important;
-    font-family: 'Lobster', sans-serif !important;
-}
-  
-  
+
 .navbar{
-    background-color: rgba(252, 127, 10, 0.932) !important;
+    background-color: rgb(255, 136, 0);
 }
 
 img{
     width: 90px;
     padding-left: 5px;
+}
+
+a{
+    text-decoration: none;
+    font-size: 40px;
+    font-family: 'Lobster', sans-serif;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
 }

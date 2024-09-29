@@ -21,18 +21,21 @@
         <div class="col-lg-6">
             <select id="tipo" class="form-control form-select" [(ngModel)]="user.tipo">
                 <input type="text" id="Tipo">
+                <option value=""disabled selected >Seleccione rol</option>
                 <option value="Administrador"label="Administrador">Administrador</option>
                 <option value="General" label="General">General</option>
-            </select>
+            </select><br>
             <span style="color: red;" *ngIf="validtipo==false">Elegir el tipo de usuario</span>
         </div>
     </div>
+    <br>
     <div class="row">
         <div class="col-lg-3"></div>
         <div class="col-lg-3">
             <button *ngIf="beditar==false" class="btn btn-primary" (click)="ingresar()">Guardar</button>
             <button *ngIf="beditar==true" class="btn btn-primary" (click)="editar()">Editar</button>
         </div>
+        <br><br>
         <div class="col-lg-3">
             <button class="btn btn-secondary" (click)="mostrar(0)">Cancelar</button>
         </div>
